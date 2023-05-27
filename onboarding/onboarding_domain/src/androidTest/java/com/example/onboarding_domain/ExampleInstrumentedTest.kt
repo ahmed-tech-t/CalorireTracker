@@ -1,4 +1,4 @@
-package com.example.on_boarding_domain
+package com.example.onboarding_domain
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

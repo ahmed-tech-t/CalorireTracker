@@ -4,7 +4,6 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-parcelize'
 
 android {
-    namespace ="com.example.core"
     compileSdk ProjectConfig.compileSdk
 
     defaultConfig {
