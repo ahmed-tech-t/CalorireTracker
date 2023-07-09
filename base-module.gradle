@@ -37,6 +37,14 @@ dependencies {
     implementation DaggerHilt.hiltNav
 
     testImplementation Testing.junit4
+    testImplementation Testing.mockk
+    testImplementation Testing.mockkAndroid
+    testImplementation Testing.mockkAgent
+    testImplementation Testing.truth
+
+
+    androidTestImplementation Testing.mockkAndroid
+    androidTestImplementation Testing.mockkAgent
 
     androidTestImplementation Testing.junitAndroidExt
 
