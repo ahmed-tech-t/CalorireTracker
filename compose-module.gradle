@@ -12,11 +12,15 @@ android {
         versionCode ProjectConfig.versionCode
         versionName ProjectConfig.versionName
 
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
     buildFeatures {
         compose true
+    }
+    kapt {
+        correctErrorTypes = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion Compose.composeCompilerVersion
@@ -29,13 +33,11 @@ android {
     }
 
     compileOptions {
-        coreLibraryDesugaringEnabled true
-
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
 }
 
@@ -51,25 +53,18 @@ dependencies {
     implementation Compose.viewModelCompose
     implementation Compose.activityCompose
 
+
     kapt DaggerHilt.hiltCompiler
     implementation DaggerHilt.hiltAndroid
+    implementation DaggerHilt.hiltNav
+
 
     testImplementation Testing.junit4
-    testImplementation Testing.junitAndroidExt
-    testImplementation Testing.truth
-    testImplementation Testing.coroutines
-    testImplementation Testing.turbine
-    testImplementation Testing.composeUiTest
-    testImplementation Testing.mockk
-    testImplementation Testing.mockWebServer
 
-    androidTestImplementation Testing.junit4
     androidTestImplementation Testing.junitAndroidExt
-    androidTestImplementation Testing.truth
-    androidTestImplementation Testing.coroutines
-    androidTestImplementation Testing.turbine
+    debugImplementation Testing.ui_tool
+    debugImplementation Testing.composeTestMainfest
+
     androidTestImplementation Testing.composeUiTest
-    androidTestImplementation Testing.mockk
-    androidTestImplementation Testing.mockWebServer
-    androidTestImplementation Testing.hiltTesting
+
 }

@@ -2,7 +2,7 @@ object Testing {
     private const val junitVersion = "4.13.2"
     const val junit4 = "junit:junit:$junitVersion"
 
-    private const val junitAndroidExtVersion = "1.1.3"
+    private const val junitAndroidExtVersion = "1.1.5"
     const val junitAndroidExt = "androidx.test.ext:junit:$junitAndroidExtVersion"
 
     private const val coroutinesTestVersion = "1.5.1"
@@ -21,7 +21,10 @@ object Testing {
     private const val mockWebServerVersion = "4.9.3"
     const val mockWebServer = "com.squareup.okhttp3:mockwebserver:$mockWebServerVersion"
 
-    const val composeUiTest = "androidx.compose.ui:ui-test-junit4:${Compose.composeVersion}"
+    const val composeUiTest = "androidx.compose.ui:ui-test-junit4"
+    const val composeTestMainfest ="androidx.compose.ui:ui-test-manifest"
+    const val ui_tool = "androidx.compose.ui:ui-tooling"
+
 
     const val hiltTesting = "com.google.dagger:hilt-android-testing:${DaggerHilt.version}"
 

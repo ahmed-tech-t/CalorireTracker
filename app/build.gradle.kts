@@ -32,15 +32,13 @@ android {
         compose = true
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
-    kotlin {
-        jvmToolchain(8)
-    }
+
     composeOptions {
         kotlinCompilerExtensionVersion = Compose.composeCompilerVersion
     }
@@ -70,7 +68,8 @@ dependencies {
 
     implementation(DaggerHilt.hiltAndroid)
     kapt(DaggerHilt.hiltCompiler)
-
+    implementation(DaggerHilt.hiltNav)
+    
     implementation(project(Modules.core))
     implementation(project(Modules.coreUi))
     implementation(project(Modules.onboardingPresentation))
@@ -78,9 +77,8 @@ dependencies {
     implementation(project(Modules.trackerPresentation))
     implementation(project(Modules.trackerDomain))
     implementation(project(Modules.trackerData))
+    implementation("androidx.core:core-splashscreen:1.0.1")
 
-    implementation(AndroidX.coreKtx)
-    implementation(AndroidX.appCompat)
 
     implementation(Coil.coilCompose)
 
@@ -97,24 +95,9 @@ dependencies {
     implementation(Room.roomRuntime)
 
     testImplementation(Testing.junit4)
-    testImplementation(Testing.junitAndroidExt)
-    testImplementation(Testing.truth)
-    testImplementation(Testing.coroutines)
-    testImplementation(Testing.turbine)
-    testImplementation(Testing.composeUiTest)
-    testImplementation(Testing.mockk)
-    testImplementation(Testing.mockWebServer)
-
-    androidTestImplementation(Testing.junit4)
+    debugImplementation (Testing.ui_tool)
+    debugImplementation (Testing.composeTestMainfest)
     androidTestImplementation(Testing.junitAndroidExt)
-    androidTestImplementation(Testing.truth)
-    androidTestImplementation(Testing.coroutines)
-    androidTestImplementation(Testing.turbine)
     androidTestImplementation(Testing.composeUiTest)
-    androidTestImplementation(Testing.mockkAndroid)
-    androidTestImplementation(Testing.mockWebServer)
-    androidTestImplementation(Testing.hiltTesting)
 
-    kaptAndroidTest(DaggerHilt.hiltCompiler)
-    androidTestImplementation(Testing.testRunner)
 }
