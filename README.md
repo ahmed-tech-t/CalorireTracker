@@ -1,4 +1,4 @@
-# CalorireTracker! 
+# CalorireTracker
 
 <p align="center">
 <img src="https://github.com/ahmed-tech-t/CalorireTracker/assets/54076405/6f1ac77f-c28d-4a5c-ac2d-e044b0764679" width ="650"></br>
